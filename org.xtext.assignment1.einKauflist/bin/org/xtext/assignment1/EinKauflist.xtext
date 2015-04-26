@@ -1,0 +1,20 @@
+grammar org.xtext.assignment1.EinKauflist with org.eclipse.xtext.common.Terminals
+
+generate einKauflist "http://www.xtext.org/assignment1/EinKauflist"
+
+
+Buyticket:
+	{Buyticket}
+	category += Category*
+;
+
+Category:
+	'category' categoryName = ID
+	('-'items += Item)*
+	'end'
+;
+
+Item:
+	itemName=ID price=INT
+;
+
